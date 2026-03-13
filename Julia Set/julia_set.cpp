@@ -61,8 +61,6 @@ int main() {
         }
 
         // Exporting the generated image
-        julia_image.saveToFile("julia_set.png");
-
         if (julia_image.saveToFile("julia_set.png"))
             printf("Successful");
         else
