@@ -65,7 +65,6 @@ int main() {
         }
 
         // Exporting the generated image
-        mandelbrot_image.saveToFile("mandelbrot.png");
         if (mandelbrot_image.saveToFile("mandelbrot.png"))
             printf("Successful");
         else
