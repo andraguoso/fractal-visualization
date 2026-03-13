@@ -5,7 +5,7 @@ using namespace std;
 /*
     Initialization of parameters:
     - Resolution: 800x800 (int width x int height),
-    - Iteration limit: 150 (int MAX),
+    - Iteration limit: 550 (int MAX),
     - Bounds of the complex plane: (-2.0, 2.0) for Re, (-2.0, 2.0) for Im
 */
 const unsigned int width = 800, height = 800, MAX = 550;
