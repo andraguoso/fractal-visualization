@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include <complex>
 using namespace std;
-// The iteration limit is lower to allow more detail to be visualized
 const unsigned int width = 800, height = 800, MAX = 390;
 int main() {
     sf::Image burning_ship_image({width, height}, sf::Color(0, 0, 0));
@@ -10,10 +9,7 @@ int main() {
     for (unsigned int x = 0; x < width; x++)
         for (unsigned int y = 0; y < height; y++) {
             
-            //Adequately scaling pixels to the bounds of the complex plane
-            // The reason for multiplying a (-) to the conversion in Im is
-            // that in order to see the traditional image of the Burning Ship,
-            // it must be inverted.
+            // Adequately scaling pixels to the bounds of the complex plane
             double Re = (double(x) / width) * 3.2 - 2.2, Im = (double(y) / height) * 3.2 - 1.8;
             int iter = 0; // Variable to count number of iterations, reset for every pixel
             complex<double> c(Re, Im); // Initializing c at every pixel
@@ -33,7 +29,7 @@ int main() {
             while (abs(z) < 2.0 && iter < MAX) {
                 /*
                     Mathematical expression: 
-                        z(n+1) = (|Re(z(n))| - i * |Im(z(n))|)^2  + c
+                        z(n+1) = (|Re(z(n))| + i * |Im(z(n))|)^2  + c
 
                     The Burning Ship fractal is a variation of the Mandelbrot,
                     evidentiated through the initialization and iteration of values.
